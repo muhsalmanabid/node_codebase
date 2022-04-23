@@ -2,6 +2,7 @@ const restify = require('restify');
 const project = require('../../package.json');
 const wrapper = require('../helpers/utils/wrapper');
 const helmet = require('helmet');
+const logger = require('../helpers/utils/logger');
 
 function AppServer() {
   this.server = restify.createServer({
@@ -21,9 +22,11 @@ function AppServer() {
 
   //health check server <3
   this.server.get('/api/health-check', (req, res) => {
+    logger.log('info', 'health check success');
     wrapper.response(res, 'success', wrapper.data('Index'), 'This service is running properly');
   });
   this.server.get('/health-check', (req, res) => {
+    logger.log('info', 'health check success');
     wrapper.response(res, 'success', wrapper.data('Index'), 'This service is running properly');
   });
 }
