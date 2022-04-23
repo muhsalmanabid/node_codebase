@@ -19,8 +19,9 @@ PORT=
     
 ## Tech Stack
 
-* [Restify] The rest framework used
+* [Restify] - The rest framework used
 * [Npm] - Dependency Management
+* [Winston] - A logger for just about everything
 
 
 ## Authors
