@@ -30,7 +30,7 @@ const response = (res, type, result, message, code, link) => {
 
   const resultObject = {
     success: status,
-    data: result.data,
+    data: result.data || {},
     message: result.message,
     code: result.code
   };
@@ -38,7 +38,6 @@ const response = (res, type, result, message, code, link) => {
   if(link){
     resultObject.link = link;
   }
-
 
   res.send(result.code, resultObject);
 };
